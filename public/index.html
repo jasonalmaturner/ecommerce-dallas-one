@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="ecommerce">
+<head>
+
+</head>
+<body ng-controller="mainCtrl">
+
+  <form ng-submit="addProduct()">
+    <input ng-model="newProduct.name" placeholder="name">
+    <input ng-model="newProduct.price" placeholder="price">
+    <button>submit</button>
+  </form>
+
+  <div ng-repeat="product in products">
+    {{product.name}} {{product.price}} {{product._id}}
+    <button ng-click="toggle = !toggle">toggle me</button>
+    <div ng-show="toggle">
+      <input type="text" ng-model="product.name" placeholder="name">
+      <input type="text" ng-model="product.price" placeholder="price">
+      <button ng-click="update(product)">update me</button>
+    </div>
+  </div>
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="app.js"></script>
+  <script src="controller.js"></script>
+  <script src="service.js"></script>
+</body>
+</html>
