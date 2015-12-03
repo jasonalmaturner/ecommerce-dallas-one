@@ -23,4 +23,11 @@ angular.module('ecommerce').service('mainService', function($http) {
     });
   };
 
+  this.removeProduct = function(id) {
+    return $http({
+      method: 'DELETE',
+      url: '/api/products/' + id,
+    });
+  };
+
 });

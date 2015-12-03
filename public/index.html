@@ -15,6 +15,7 @@
     {{product.name}} {{product.price}} {{product._id}}
     <button ng-click="toggle = !toggle">toggle me</button>
     <div ng-show="toggle">
+      <a ng-click="removeProduct(product._id)">X</a>
       <input type="text" ng-model="product.name" placeholder="name">
       <input type="text" ng-model="product.price" placeholder="price">
       <button ng-click="update(product)">update me</button>

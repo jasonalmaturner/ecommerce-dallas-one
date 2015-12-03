@@ -20,4 +20,10 @@ angular.module('ecommerce').controller('mainCtrl', function($scope, mainService)
     });
   };
 
+  $scope.removeProduct = function(id) {
+    mainService.removeProduct(id).then(function(res) {
+      getProducts();
+    });
+  };
+
 });
